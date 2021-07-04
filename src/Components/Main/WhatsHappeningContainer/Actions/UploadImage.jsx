@@ -1,10 +1,10 @@
+import UploadImageIcon from "../../../../assets/uploadImage.svg";
 import IconButton from "../../../IconButton";
-import CropOriginalIcon from "@material-ui/icons/CropOriginal";
 
 function UploadImage({ setImage }) {
   return (
     <label htmlFor="upload-button">
-      <IconButton icon={CropOriginalIcon} />
+      <IconButton alt="UploadImage" src={UploadImageIcon} />
       <input
         id="upload-button"
         type="file"

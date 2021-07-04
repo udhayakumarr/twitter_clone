@@ -12,16 +12,11 @@ const Button = styled.div`
     background: rgba(29, 161, 242, 0.1);
   }
 `;
-function IconButton({ icon, onClick }) {
-  const Icon = icon;
-
-  const Buttons = styled(Icon)`
-    fill: #1da1f2 !important;
-  `;
+function IconButton({ alt, onClick, src }) {
 
   return (
     <Button onClick={onClick}>
-      <Buttons />
+       <img alt={alt} src={src} />
     </Button>
   );
 }

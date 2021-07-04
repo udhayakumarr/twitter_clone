@@ -1,9 +1,9 @@
 import { useState, useRef } from "react";
 import styled from "styled-components";
 import Picker from "emoji-picker-react";
-import SentimentSatisfiedIcon from "@material-ui/icons/SentimentSatisfied";
 
 import IconButton from "../../../IconButton";
+import EmojiIcon from '../../../../assets/uploadEmoji.svg'
 import useOnClickOutside from "../../../Hooks/useOnClickOutside";
 
 const Div = styled.div`
@@ -26,10 +26,7 @@ function UploadEmoji({ appendEmojiToMessage }) {
   };
   return (
     <div>
-      <IconButton
-        icon={SentimentSatisfiedIcon}
-        onClick={handleEmojiIconClick}
-      />
+      <IconButton onClick={handleEmojiIconClick} alt="AddEmoji" src={EmojiIcon} />
       {showEmojiPicker && (
         <Div ref={ref}>
           <Picker onEmojiClick={onEmojiClick} />{" "}
