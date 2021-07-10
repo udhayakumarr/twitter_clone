@@ -1,9 +1,11 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 
 import HeaderContainer from "./HeaderContainer";
 import WhatsHappeningContainer from "./WhatsHappeningContainer";
 import TweetList from "./TweetList";
+import { useUserProfile } from "../UserContext";
+import useCustomFetch from "../Hooks/useCustomFetch";
 
 const Container = styled.main`
   flex: 0.5;
@@ -24,19 +26,13 @@ const Divider = styled.div`
 function Body() {
   const [image, setImage] = useState();
   const [message, setMessage] = useState();
-  const [tweets, setTweets] = useState([]);
-
-  useEffect(() => {
-    const fetchTweets = async () => {
-      const response = await fetch(
-        "http://localhost:8000/tweets?_sort=id&_order=desc"
-      );
-      const data = await response.json();
-      setTweets(data);
-    };
-
-    fetchTweets();
-  }, []);
+  const { name, avatarUrl, tagName } = useUserProfile();
+  const {
+    data: tweets,
+    loading,
+    error,
+    refetch,
+  } = useCustomFetch("tweets?_sort=id&_order=desc");
 
   const removeImage = () => {
     setImage("");
@@ -58,9 +54,9 @@ function Body() {
     const data = {
       id: tweets.length + 1,
       user: {
-        name: "udhay kumar",
-        avatarUrl: image,
-        tagName: `@udhaya`,
+        name: name,
+        avatarUrl: avatarUrl,
+        tagName: tagName,
       },
       message,
       image,
@@ -76,7 +72,7 @@ function Body() {
       .then((response) => response.json())
       .then((data) => {
         tweets.splice(0, 0, data);
-        setTweets(tweets);
+        refetch();
         setImage("");
         setMessage("");
       });
@@ -96,7 +92,7 @@ function Body() {
       />
       <Divider />
 
-      <TweetList tweets={tweets} />
+      <TweetList tweets={tweets} loading={loading} error={error}/>
     </Container>
   );
 }

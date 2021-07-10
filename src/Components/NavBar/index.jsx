@@ -1,11 +1,14 @@
 import styled from "styled-components";
 import TwitterIcon from "@material-ui/icons/Twitter";
 
+import FlexGrow from "../CommonStyles/FlexGrow";
 import Button from "../CommonStyles/Button";
 import Nav from "./Nav";
+import UserProfile from "./UserProfile";
 
 const Container = styled.div`
   flex: 0.2;
+  padding-right: 10px;
 `;
 
 const Twiiter = styled(TwitterIcon)`
@@ -21,6 +24,9 @@ const Div = styled.div`
 const Sticky = styled.div`
   position: sticky;
   top: 5px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 `;
 
 export default function NavBar() {
@@ -31,7 +37,9 @@ export default function NavBar() {
           <Twiiter />
         </Div>
         <Nav />
-        <Button padding="15px 80px">Tweet</Button>
+        <Button padding="15px 70px">Tweet</Button>
+        <FlexGrow />
+        <UserProfile />
       </Sticky>
     </Container>
   );

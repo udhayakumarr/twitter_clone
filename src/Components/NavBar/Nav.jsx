@@ -9,6 +9,7 @@ const NavItem = styled.nav`
 
 const Link = styled.a`
   text-decoration: none;
+  margin: 4px 0px;
 `;
 
 const Container = styled.div`
@@ -43,7 +44,7 @@ export default function Nav() {
           <Link key={index} href="./">
             <Div>
               <Container>
-                <Icon style={{ color: "#0f1419", fontSize: "2rem" }} />
+                 <img alt={option.name} src={Icon}></img>
                 <LinkText>{option.name}</LinkText>
               </Container>
             </Div>

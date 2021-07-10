@@ -1,45 +1,46 @@
-import HomeOutlinedIcon from "@material-ui/icons/HomeOutlined";
-import MoreHorizOutlinedIcon from "@material-ui/icons/MoreHorizOutlined";
-import NotificationsNoneRoundedIcon from "@material-ui/icons/NotificationsNoneRounded";
-import BookmarkBorderRoundedIcon from "@material-ui/icons/BookmarkBorderRounded";
-import ListIcon from "@material-ui/icons/List";
-import PersonOutlineIcon from "@material-ui/icons/PersonOutline";
-import EmailOutlinedIcon from '@material-ui/icons/EmailOutlined';
+import HomeIcon from '../../assets/home.svg' 
+import ExploreIcon from '../../assets/explore.svg'
+import NotificationIcon from '../../assets/notification.svg'
+import MessageIcon from '../../assets/message.svg'
+import BookMarksIcon from '../../assets/bookMarks.svg'
+import ListsIcon from '../../assets/lists.svg'
+import ProfileIcon from '../../assets/profile.svg'
+import MoreIcon from '../../assets/more.svg'
 
 const options = [
   {
     name: "Home",
-    Icon: HomeOutlinedIcon,
+    Icon: HomeIcon,
   },
 
   {
     name: "Explore",
-    Icon: HomeOutlinedIcon,
+    Icon: ExploreIcon,
   },
 
   {
     name: "Notifications",
-    Icon: NotificationsNoneRoundedIcon,
+    Icon: NotificationIcon,
   },
   {
     name: "Messages",
-    Icon: EmailOutlinedIcon,
+    Icon: MessageIcon,
   },
   {
     name: "Bookmarks",
-    Icon: BookmarkBorderRoundedIcon,
+    Icon: BookMarksIcon,
   },
   {
     name: "Lists",
-    Icon: ListIcon,
+    Icon: ListsIcon,
   },
   {
     name: "Profile",
-    Icon: PersonOutlineIcon,
+    Icon: ProfileIcon,
   },
   {
     name: "More",
-    Icon: MoreHorizOutlinedIcon,
+    Icon: MoreIcon,
   },
 ];
 

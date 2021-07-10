@@ -4,6 +4,7 @@ import PreviewImage from "../PreviewImage";
 import AvatarConatiner from "../AvatarContainer";
 import TweetMessage from "./TweetMessage";
 import Actions from "./Actions";
+import { useUserProfile } from "../../UserContext";
 
 const Container = styled.div`
   padding: 10px;
@@ -26,9 +27,10 @@ function WhatsHappeningContainer({
   appendEmojiToMessage,
   handleOnTweet,
 }) {
+  const { avatarUrl } = useUserProfile();
   return (
     <Container>
-      <AvatarConatiner url={null} />
+      <AvatarConatiner url={avatarUrl} />
       <TweetShare>
         <TweetMessage message={message} setMessage={setMessage} />
         <PreviewImage image={image} removeImage={removeImage} />

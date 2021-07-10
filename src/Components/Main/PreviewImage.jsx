@@ -45,8 +45,8 @@ const Icon = styled(ClearIcon)`
 
 const Div = styled.div`
   display: flex;
-  maxwidth: 100%;
-  margintop: 20;
+  max-width: 100%;
+  margin-top: 20px;
 `;
 
 function PreviewImage({ removeImage, image }) {
