@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
+import UserContext from "./Components/UserContext";
 import Navbar from "./Components/NavBar";
-import Main from "./Components/Main"
+import Main from "./Components/Main";
 
 const Container = styled.div`
   display: flex;
@@ -10,11 +11,13 @@ const Container = styled.div`
 
 function App() {
   return (
-    <Container>
-      <Navbar />
-      <Main />
-      {/* <Feed /> */}
-    </Container>
+    <UserContext>
+      <Container>
+        <Navbar />
+        <Main />
+        {/* <Feed /> */}
+      </Container>
+    </UserContext>
   );
 }
 
